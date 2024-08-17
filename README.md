@@ -1,57 +1,67 @@
-# 🐺 QA Wolf Take Home Assignment
+# **Data Scrapper ** 
 
-Welcome to the QA Wolf take home assignment for our [QA Engineer](https://www.notion.so/qawolf/QA-Wolf-QA-Engineer-Remote-156203a1e476459ea5e6ffca972d0efe) role! We appreciate your interest and look forward to seeing what you come up with.
+This repository contains a Node.js script that uses the Playwright library to scrape the latest articles from Hacker News. The script collects, sorts, and saves the top 100 articles based on their publication time, making it a useful tool for tracking the most recent news in the tech community.
 
-## Instructions
+## **Features**
 
-This assignment has two questions as outlined below. When you are done, send [qa-hiring@qawolf.com](mailto:qa-hiring@qawolf.com) the following:
+- **Automated Browser Navigation:** The script automatically opens a Chromium browser, navigates to the Hacker News 'Newest' page, and collects the latest articles.
+- **Article Data Collection:** Extracts the rank, title, and age of each article from the Hacker News page.
+- **Sorting:** The collected articles are sorted from newest to oldest based on their publication time.
+- **Data Export:** The sorted articles are saved to a CSV file named `hacker_news_articles.csv` for easy access and further analysis.
 
-1. A link to a zip file of this folder on Google Drive 
+## **Requirements**
 
-2. A note indicating your work location (Country/State)
+To run this script, ensure you have the following installed:
 
-3. A note of how you found this job post (LinkedIn, Handshake, Wellfound, referral, etc.)
+- [Node.js](https://nodejs.org/) (version 18 or later)
 
-### Question 1
+## **Installation**
 
-In this assignment, you will create a script on [Hacker News](https://news.ycombinator.com/) using JavaScript and Microsoft's [Playwright](https://playwright.dev/) framework. 
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/yourusername/hacker-news-article-scraper.git
+   cd hacker-news-article-scraper
+   ```
 
-1. Install node modules by running `npm i`.
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
 
-2. Edit the `index.js` file in this project to go to [Hacker News/newest](https://news.ycombinator.com/newest) and validate that EXACTLY the first 100 articles are sorted from newest to oldest. You can run your script with the `node index.js` command.
+## **Usage**
 
-Note that you are welcome to update Playwright or install other packages as you see fit, however you must utilize Playwright in this assignment.
+1. **Run the script:**
+   ```bash
+   node index.js
+   ```
 
-### Question 2
+   - The script will open a Chromium browser, navigate to Hacker News, and start collecting articles.
+   - It will continue to click the "More" button until it has collected at least 100 articles.
 
-Why do you want to work at QA Wolf? Please record a short, ~2 min video that includes:
+2. **Output:**
+   - After the script finishes, it will display the collected and sorted articles in the console.
+   - The results are saved in a CSV file named `hacker_news_articles.csv` in the project directory.
 
-1. Your answer 
+## **Code Overview**
 
-2. A walk-through demonstration of your code, showing a successful execution
+- **`sortHackerNewsArticles` Function:** 
+  - This function handles the entire process of launching the browser, navigating through the Hacker News pages, collecting article data, sorting them, and saving them to a CSV file.
+  
+- **Article Collection:**
+  - The script gathers the article rank, title, and age and ensures that the collection continues until at least 100 articles are retrieved.
+  
+- **Sorting Mechanism:**
+  - The articles are sorted by their age, from the newest to the oldest, before being saved to the CSV file.
 
-Post the link in `why_qa_wolf.txt` (Please use [Loom](https://www.loom.com) to record your response). The answer and walkthrough should be combined into *one* video.
+## **Contributing**
 
-## Frequently Asked Questions
+If you have suggestions or improvements, feel free to fork the repository and submit a pull request. Contributions are welcome!
 
-### What is your hiring process? When will I hear about next steps?
 
-This take home assignment is the first step in our hiring process, followed by a final round interview if it goes well. **We review every take home assignment submission and promise to get back to you either way within one week (usually sooner).** The only caveat is if we are out of the office, in which case we will get back to you when we return. If it has been more than one week and you have not heard from us, please do follow up.
+## **Contact**
 
-The final round interview is a 2-hour technical work session that reflects what it is like to work here. We provide a $150 stipend for your time for the final round interview regardless of how it goes. After that, there may be a short chat with our director about your experience and the role.
+If you have any questions or need further assistance, please open an issue in this repository or contact me at [pparitam@gmail.com](mailto:pparitam@gmail.com).
 
-Our hiring process is rolling where we review candidates until we have filled our openings. If there are no openings left, we will keep your contact information on file and reach out when we are hiring again.
+---
 
-### How do you decide who to hire?
-
-We evaluate candidates based on three criteria:
-
-- Technical ability (as demonstrated in the take home and final round)
-- Customer service orientation (as this role is customer facing)
-- Alignment with our values (captured [here](https://www.notion.so/qawolf/QA-Wolf-QA-Engineer-Remote-156203a1e476459ea5e6ffca972d0efe))
-
-This means whether we hire you is based on how you do during our interview process, not on your previous experience (or lack thereof). Note that you will also need to pass a background check to work here as our customers require this.
-
-### How can I help my application stand out?
-
-We've found that our best hires have been the most enthusiastic throughout our process. If you are very excited about working here, please feel free to go above and beyond on this assignment.
+This README provides a clear overview of the project, how to set it up, and what it does. Feel free to adjust it based on your preferences or specific details related to your project.
